@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import AWS from "aws-sdk"
 
-const S3_BUCKET = "react-s3-image-bucket"
-const REGION = "us-east-1"
+const S3_BUCKET = "react-s3-image-bucket" // YOUR BUCKET NAME
+const REGION = "us-east-1" // REGION YOUR BUCKET IS IN
 
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
