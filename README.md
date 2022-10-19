@@ -27,3 +27,11 @@ This project is example of using react to upload images to S3.
 1. Clone this repo
 2. Create an .env file using the .env.example as a reference
 3. Fill in the env variables with necessary values.
+
+## Common Errors
+
+- [Bucket does not Allow ACLs](https://stackoverflow.com/questions/71080354/getting-the-bucket-does-not-allow-acls-error)
+
+- [env variable undefined](https://medium.com/@zak786khan/env-variables-undefined-78cf218dae87)
+
+- Double check you access key and secret access key, be sure there are no spaces and its wrapped in double quotation marks like so "ENV_VARIABLE"
