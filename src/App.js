@@ -1,13 +1,13 @@
 import logo from "./logo.svg"
 import "./App.css"
-import UploadImageToS3WithNativeSdk from "./components/UploadImageToS3WithNativeSdk"
+import UploadImageToS3 from "./components/UploadImageToS3"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <UploadImageToS3WithNativeSdk />
+        <UploadImageToS3 />
       </header>
     </div>
   )

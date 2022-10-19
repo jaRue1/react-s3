@@ -5,10 +5,8 @@ const S3_BUCKET = "react-s3-image-bucket"
 const REGION = "us-east-1"
 
 AWS.config.update({
-  credentials: {
-    accessKeyId: process.env.ACCESS_KEY_ID,
-    secretAccessKey: process.env.SECRET_ACCESS_KEY,
-  },
+  accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
+  secretAccessKey: process.env.REACT_APP_SECRET_ACCESS_KEY,
 })
 
 const myBucket = new AWS.S3({
@@ -16,7 +14,7 @@ const myBucket = new AWS.S3({
   region: REGION,
 })
 
-const UploadImageToS3WithNativeSdk = () => {
+function UploadImageToS3() {
   const [progress, setProgress] = useState(0)
   const [selectedFile, setSelectedFile] = useState(null)
 
@@ -29,6 +27,7 @@ const UploadImageToS3WithNativeSdk = () => {
       ACL: "public-read",
       Body: file,
       Bucket: S3_BUCKET,
+      ContentType: file.type,
       Key: file.name,
     }
 
@@ -41,14 +40,13 @@ const UploadImageToS3WithNativeSdk = () => {
         if (err) console.log(err)
       })
   }
-
   return (
     <div>
-      <div>Native SDK File Upload Progress is {progress}%</div>
+      <div> Upload Progress is {progress}%</div>
       <input type="file" onChange={handleFileInput} />
       <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button>
     </div>
   )
 }
 
-export default UploadImageToS3WithNativeSdk
+export default UploadImageToS3
