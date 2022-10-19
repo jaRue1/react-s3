@@ -27,4 +27,3 @@ This project is example of using react to upload images to S3.
 1. Clone this repo
 2. Create an .env file using the .env.example as a reference
 3. Fill in the env variables with necessary values.
-4.
